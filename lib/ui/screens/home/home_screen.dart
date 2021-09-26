@@ -5,6 +5,7 @@ import 'package:leeyurani/ui/screens/home/sections/home_about_sections.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_header_sections.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_resume_sections.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_skills_sections.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -31,6 +32,12 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
+  final ItemScrollController itemScrollController = ItemScrollController();
+  final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
+  void goToPosition(int index) {
+    itemScrollController.scrollTo(index: index, duration: const Duration(milliseconds: 600));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -64,12 +71,15 @@ class _HomeBodyState extends State<HomeBody> {
           children: [
             MouseRegion(
               cursor: SystemMouseCursors.click,
-              child: Text(
-                "Leeyurani",
-                style: styleTitle.copyWith(
-                  color: primaryColor,
-                  fontSize: 35,
-                  fontFamily: secondaryFontName
+              child: GestureDetector(
+                onTap: () => goToPosition(0),
+                child: Text(
+                  "Leeyurani",
+                  style: styleTitle.copyWith(
+                    color: primaryColor,
+                    fontSize: 35,
+                    fontFamily: secondaryFontName
+                  ),
                 ),
               ),
             ),
@@ -80,22 +90,22 @@ class _HomeBodyState extends State<HomeBody> {
                 children: [
                   _menuItem(
                     title: "HOME",
-                    onClick: () {}
+                    onClick: () => goToPosition(0),
                   ),
                   const SizedBox(width: 40),
                   _menuItem(
                     title: "ABOUT",
-                    onClick: () {}
+                    onClick: () => goToPosition(1)
                   ),
                   const SizedBox(width: 40),
                   _menuItem(
                     title: "SKILLS",
-                    onClick: () {}
+                    onClick: () => goToPosition(2)
                   ),
                   const SizedBox(width: 40),
                   _menuItem(
                     title: "RESUME",
-                    onClick: () {}
+                    onClick: () => goToPosition(3)
                   )
                 ],
               ),
@@ -136,8 +146,9 @@ class _HomeBodyState extends State<HomeBody> {
   }
 
   Widget _homeContentsWidget() {
-    return ListView.builder(
-      shrinkWrap: true,
+    return ScrollablePositionedList.builder(
+      itemScrollController: itemScrollController,
+      itemPositionsListener: itemPositionsListener,
       itemCount: HomeBody.sections.length,
       itemBuilder: (context, index) {
 
