@@ -85,7 +85,7 @@ class _HomeSkillsSectionsState extends State<HomeSkillsSections> {
                   title: "Skills",
                 ),
                 const SizedBox(height: 20),
-                _skillWidget()
+                _skillWidget(),
               ],
             ),
           )
@@ -186,6 +186,14 @@ class _HomeSkillsSectionsState extends State<HomeSkillsSections> {
             final _skill = _techSkill[index];
             return SkillItem(skill: _skill);
           },
+        ),
+        const SizedBox(height: 20),
+        Text(
+          "Info: Tahun pengalaman tidak menjadi penentu kualitas, sebab ditahun tertentu hanya fokus distack tertentu saja",
+          style: styleSubtitle.copyWith(
+            fontSize: 14,
+            color: Colors.white
+          )
         )
       ],
     );
