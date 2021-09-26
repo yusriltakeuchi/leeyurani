@@ -15,7 +15,7 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage("$imageAsset/background.jpg"),
+          image: AssetImage("$imageAsset/background.jpg"),
           fit: BoxFit.cover
         ),
       ),
@@ -71,7 +71,7 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         image: AssetImage(
-                          "$imageAsset/profile.png"
+                          "$imageAsset/profile.jpg"
                         ),
                         fit: BoxFit.cover
                       ),
