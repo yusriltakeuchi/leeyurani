@@ -47,7 +47,17 @@ class _HomeBodyState extends State<HomeBody> {
 
   Widget _appbarWidget() {
     return Container(
-      color: blackColor,
+      decoration: BoxDecoration(
+        color: blackColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 5,
+            blurRadius: 8,
+            offset: const Offset(0, 4)
+          )
+        ]
+      ),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 15, horizontal: Responsive.isMobile(context) ? 20 : deviceWidth(context) * (Responsive.isTablet(context) ? 0.1 : 0.2)),
         child: Row(

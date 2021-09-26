@@ -44,7 +44,7 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
 
   Widget _headerProfile() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 70),
+      padding: const EdgeInsets.only(top: 120, bottom: 70),
       child: Align(
         alignment: Alignment.topCenter,
         child: IntrinsicHeight(
