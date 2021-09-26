@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:leeyurani/ui/constants/constant.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class SocialButton extends StatelessWidget {

@@ -13,9 +13,9 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage("https://www.course-net.com/wp-content/uploads/2020/01/Kamu-bisa-ikut-kursus-coding-atau-belajar-sendiri-dari-aplikasi-coding.jpg"),
+          image: NetworkImage("$imageAsset/background.jpg"),
           fit: BoxFit.cover
         ),
       ),
@@ -36,7 +36,7 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [blackColor, blackColor.withOpacity(0.9)],
+          colors: [blackColor, blackColor.withOpacity(0.8)],
         )
       ),
     );
@@ -56,7 +56,7 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 decoration: BoxDecoration(
                   color: blackColor,
-                  borderRadius: BorderRadius.circular(8)
+                  borderRadius: BorderRadius.circular(10)
                 ),
               ),
               Column(
@@ -69,9 +69,9 @@ class _HomeHeaderSectionsState extends State<HomeHeaderSections> {
                       color: blackColor,
                       border: Border.all(color: primaryColor, width: 8),
                       shape: BoxShape.circle,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          "https://leeyurani.com/assets/images/hero.png",
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "$imageAsset/profile.png"
                         ),
                         fit: BoxFit.cover
                       ),
