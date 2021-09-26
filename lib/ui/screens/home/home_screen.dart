@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leeyurani/ui/constants/responsive.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_about_sections.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_header_sections.dart';
+import 'package:leeyurani/ui/screens/home/sections/home_resume_sections.dart';
 import 'package:leeyurani/ui/screens/home/sections/home_skills_sections.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,7 +21,8 @@ class HomeBody extends StatelessWidget {
   static const List<Widget> sections = [
     HomeHeaderSections(),
     HomeAboutSections(),
-    HomeSkillsSections()
+    HomeSkillsSections(),
+    HomeResumeSections()
   ];
 
   @override
