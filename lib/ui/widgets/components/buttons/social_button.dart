@@ -5,10 +5,10 @@ class SocialButton extends StatelessWidget {
   final String? iconPath;
   final VoidCallback? onClick;
   const SocialButton({
-    Key? key,
+    super.key,
     required this.iconPath,
     required this.onClick,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SocialButton extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: WebsafeSvg.asset(
               iconPath!, 
-              color: Colors.white,
+              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
               width: 20,
               height: 20
             ),

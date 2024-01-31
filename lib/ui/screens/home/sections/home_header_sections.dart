@@ -4,7 +4,7 @@ import 'package:leeyurani/ui/constants/responsive.dart';
 import 'package:leeyurani/ui/widgets/components/buttons/social_button.dart';
 
 class HomeHeaderSections extends StatefulWidget {
-  const HomeHeaderSections({ Key? key }) : super(key: key);
+  const HomeHeaderSections({ super.key });
   @override
   State<HomeHeaderSections> createState() => _HomeHeaderSectionsState();
 }

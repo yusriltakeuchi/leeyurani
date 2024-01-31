@@ -6,7 +6,7 @@ import 'package:leeyurani/ui/widgets/components/headers/head_item.dart';
 import 'package:leeyurani/ui/widgets/components/resume/resume_item.dart';
 
 class HomeResumeSections extends StatefulWidget {
-  const HomeResumeSections({ Key? key }) : super(key: key);
+  const HomeResumeSections({ super.key });
 
   @override
   State<HomeResumeSections> createState() => _HomeResumeSectionsState();
@@ -137,9 +137,9 @@ class _HomeResumeSectionsState extends State<HomeResumeSections> {
           itemCount: _educationals.length,
           itemBuilder: (context, index) {
             
-            final _resume = _educationals[index];
+            final resume = _educationals[index];
             return ResumeItem(
-              resume: _resume,
+              resume: resume,
               isEnd: index == _educationals.length-1,
               showLine: !Responsive.isMobile(context),
             );
@@ -167,9 +167,9 @@ class _HomeResumeSectionsState extends State<HomeResumeSections> {
           itemCount: _experiences.length,
           itemBuilder: (context, index) {
             
-            final _resume = _experiences[index];
+            final resume = _experiences[index];
             return ResumeItem(
-              resume: _resume,
+              resume: resume,
               isEnd: index == _experiences.length-1,
               isLeft: true,
               showLine: !Responsive.isMobile(context),

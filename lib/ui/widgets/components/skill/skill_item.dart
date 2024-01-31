@@ -7,9 +7,9 @@ import 'package:leeyurani/ui/constants/responsive.dart';
 class SkillItem extends StatelessWidget {
   final SkillModel skill;
   const SkillItem({
-    Key? key,
+    super.key,
     required this.skill,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(

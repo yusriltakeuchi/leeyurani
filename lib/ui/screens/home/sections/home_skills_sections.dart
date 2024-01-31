@@ -6,7 +6,7 @@ import 'package:leeyurani/ui/widgets/components/headers/head_item.dart';
 import 'package:leeyurani/ui/widgets/components/skill/skill_item.dart';
 
 class HomeSkillsSections extends StatefulWidget {
-  const HomeSkillsSections({ Key? key }) : super(key: key);
+  const HomeSkillsSections({ super.key });
 
   @override
   State<HomeSkillsSections> createState() => _HomeSkillsSectionsState();
@@ -157,8 +157,8 @@ class _HomeSkillsSectionsState extends State<HomeSkillsSections> {
           itemCount: _professionalSkill.length,
           itemBuilder: (context, index) {
             
-            final _skill = _professionalSkill[index];
-            return SkillItem(skill: _skill);
+            final skill = _professionalSkill[index];
+            return SkillItem(skill: skill);
           },
         )
       ],
@@ -183,8 +183,8 @@ class _HomeSkillsSectionsState extends State<HomeSkillsSections> {
           itemCount: _techSkill.length,
           itemBuilder: (context, index) {
             
-            final _skill = _techSkill[index];
-            return SkillItem(skill: _skill);
+            final skill = _techSkill[index];
+            return SkillItem(skill: skill);
           },
         ),
         const SizedBox(height: 20),

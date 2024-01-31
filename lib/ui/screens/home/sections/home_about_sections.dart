@@ -6,7 +6,7 @@ import 'package:leeyurani/ui/constants/responsive.dart';
 import 'package:leeyurani/ui/widgets/components/headers/head_item.dart';
 
 class HomeAboutSections extends StatefulWidget {
-  const HomeAboutSections({ Key? key }) : super(key: key);
+  const HomeAboutSections({ super.key });
 
   @override
   State<HomeAboutSections> createState() => _HomeAboutSectionsState();
@@ -85,27 +85,27 @@ class _HomeAboutSectionsState extends State<HomeAboutSections> {
           ),
         ),
         const SizedBox(height: 30),
-        StaggeredGridView.countBuilder(
+        AlignedGridView.count(
           crossAxisCount: Responsive.isMobile(context) ? 2 : Responsive.isTablet(context) ? 2 : 4,
           padding: const EdgeInsets.all(0),
           physics: const NeverScrollableScrollPhysics(),
           itemCount: _stacks.length,
           shrinkWrap: true,
-          staggeredTileBuilder: (int index) =>
-            const StaggeredTile.fit(1),
+          // staggeredTileBuilder: (int index) =>
+          //   const StaggeredTile.fit(1),
           mainAxisSpacing: 20,
           crossAxisSpacing: 20, // add some space
           itemBuilder: (context, index) {
 
-            final _item = _stacks[index];
-            return _stackItem(_item);
+            final item = _stacks[index];
+            return _stackItem(item);
           },
         )
       ],
     );
   }
 
-  Widget _stackItem(StackModel _item) {
+  Widget _stackItem(StackModel item) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: Container(
@@ -126,13 +126,13 @@ class _HomeAboutSectionsState extends State<HomeAboutSections> {
           child: Column(
             children: [
               Image.asset(
-                _item.iconPath!,
+                item.iconPath!,
                 width: 30,
                 height: 30,
               ),
               const SizedBox(height: 15),
               Text(
-                _item.title!,
+                item.title!,
                 style: styleTitle.copyWith(
                   fontWeight: FontWeight.w500,
                   fontSize: Responsive.isMobile(context) ? 15 : 18
