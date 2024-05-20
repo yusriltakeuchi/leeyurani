@@ -8,7 +8,7 @@ import 'package:leeyurani/ui/screens/home/sections/home_skills_sections.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+  const HomeScreen({ super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class HomeBody extends StatefulWidget {
-  const HomeBody({ Key? key }) : super(key: key);
+  const HomeBody({ super.key });
   static const List<Widget> sections = [
     HomeHeaderSections(),
     HomeAboutSections(),

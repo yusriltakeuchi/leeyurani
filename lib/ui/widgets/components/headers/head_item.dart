@@ -8,11 +8,11 @@ class HeadItem extends StatelessWidget {
   final String? title;
   final Color? customColor;
   const HeadItem({
-    Key? key,
+    super.key,
     required this.iconPath,
     required this.title,
     this.customColor
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class HeadItem extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: WebsafeSvg.asset(
               iconPath!,
-              color: primaryColor,
+              colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
               width: 32,
               height: 32
             ),

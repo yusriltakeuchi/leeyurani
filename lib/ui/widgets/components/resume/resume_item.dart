@@ -9,12 +9,12 @@ class ResumeItem extends StatelessWidget {
   final bool isLeft;
   final bool showLine;
   const ResumeItem({
-    Key? key,
+    super.key,
     required this.resume,
     required this.isEnd,
     this.isLeft = false,
     this.showLine = true
-  }) : super(key: key);
+  });
   
   @override
   Widget build(BuildContext context) {
